@@ -1,0 +1,37 @@
+  <once-demo />
+  <async-demo />
+  <transition-demo />
+  <proxy-refs />
+  <fallthrough-demo class="white-color" @click="handleOuterClick"/>
+  <scoped-style class="hello" @onClick="handleClick"></scoped-style>
+  <suspense-demo class="suspense-demo"></suspense-demo>
+  <hello-world ref='helloWorld' msg="fragment node"></hello-world>
+  <jsx-demo></jsx-demo>
+
+  <hello msg="Welcome to Your Vue.js App"/>
+  <slot-demo>
+    <div>
+      <label class="hello">default slot w/ parent comp scope: </label>
+      <span>{{ slogan }}</span>
+    </div>
+    <template #scoped="slotProps">
+      <label class="slot-class">scoped slot w/ slot scope: </label>
+      <div>access slot props "{{slotProps.slogan}}", </div>
+      <div> also can access parent scoped "{{slogan}}"</div>
+    </template>
+  </slot-demo>
+
+    <antd-render />
+  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <RenderDemo msg="Hello Vue 3 + Vite">
+    <template v-slot:default='{count}'>
+      <div>count: {{count}}</div>
+    </template>
+  </RenderDemo>
+  <input type="text" v-model.lazy='name'>
+  <input type="checkbox" v-model="ck" id='ck' :style="{background: 'lightblue'}"/>
+  <div>
+    <button class="text-red bg-red" @click="handleClickMe">Click Me</button>
+    <span>Mouse x: </span> <span>{{x}}</span><br/>
+    <span>Mouse y: </span> <span>{{y}}</span>
+  </div>
